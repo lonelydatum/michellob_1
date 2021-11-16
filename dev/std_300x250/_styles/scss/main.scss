@@ -1,17 +1,21 @@
 @import '../../../_common/styles/common.scss';
 
 
-.dot{
-	width: 5px;
-	height: 5px;
-	background-color: red;
-	@include pos(0, 0);
-}
+// .dot{
+// 	width: 5px;
+// 	height: 5px;
+// 	background-color: red;
+// 	@include pos(0, 0);
+// }
 
+.o{
+	@include pos-scale(71, 184, .5);
+}
 
 .ball{
 	// border: 1px solid blue;
 	transform-origin: 50% 50%;
+	@include pos-scale(-90, 0, .5);
 
 	// @include pos-scale(90, 90, .5);
 }

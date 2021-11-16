@@ -39,7 +39,7 @@ function start() {
 
 	tl.add(setItem("og"));
 
-	tl.to(".ball", 1.6, {
+	tl.to(".ball", 1.2, {
 		rotation: 222,
 		bezier: {
 			type: "cubic",
@@ -48,11 +48,11 @@ function start() {
 			autoRotate: ["x", "y", "rotation", 0, true]
 		},
 		ease: Power2.easeInOut
-	}, 0);
+	}, 2);
 
-	tl.from(".t1", .3, { opacity: 0 }, 1);
+	tl.from(".t1", .3, { opacity: 0 }, 0);
 
-	tl.add(setItem("white"), 3);
+	tl.add(setItem("white"), "+=.1");
 
 	tl.set(".frame1", { backgroundColor: BLUE });
 
@@ -77,6 +77,7 @@ function start() {
 
 	tl.from(".beer", .4, { x: "+=100", ease: Power3.easeOut }, "end");
 	tl.from(".t2", .3, { opacity: 0, x: "-=50", ease: ease }, "end");
+	tl.from(".o", .3, { opacity: 0, ease: ease }, "end");
 }
 
 function setItem(item) {

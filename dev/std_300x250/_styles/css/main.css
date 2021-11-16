@@ -170,13 +170,10 @@ sup {
   background: linear-gradient(0deg, rgba(0, 0, 0, 0.6) 4%, transparent 52%);
 }
 
-.dot {
-  width: 5px;
-  height: 5px;
-  background-color: red;
-  -webkit-transform: translate(0px, 0px);
-  -ms-transform: translate(0px, 0px);
-  transform: translate(0px, 0px);
+.o {
+  -webkit-transform: translate(71px, 184px) scale(0.5, 0.5);
+  -ms-transform: translate(71px, 184px) scale(0.5, 0.5);
+  transform: translate(71px, 184px) scale(0.5, 0.5);
   -webkit-backface-visibility: hidden;
   backface-visibility: hidden;
   -webkit-perspective: 1000px;
@@ -188,6 +185,14 @@ sup {
   -webkit-transform-origin: 50% 50%;
   -ms-transform-origin: 50% 50%;
   transform-origin: 50% 50%;
+  -webkit-transform: translate(-90px, 0px) scale(0.5, 0.5);
+  -ms-transform: translate(-90px, 0px) scale(0.5, 0.5);
+  transform: translate(-90px, 0px) scale(0.5, 0.5);
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+  -webkit-perspective: 1000px;
+  perspective: 1000px;
+  position: absolute;
 }
 
 .frame2 {

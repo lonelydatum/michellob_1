@@ -37,7 +37,12 @@ $property: transform;
 
 
 
-
+@mixin pos-scale-xy($x, $y, $sx, $sy) {
+    @include prefix( translate($x + px, $y + px) scale($sx, $sy) );
+    backface-visibility: hidden;
+    perspective: 1000px;
+    position: absolute;
+}
 
 
 

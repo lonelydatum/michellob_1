@@ -170,4 +170,102 @@ sup {
   background: linear-gradient(0deg, rgba(0, 0, 0, 0.6) 4%, transparent 52%);
 }
 
+.dot {
+  width: 5px;
+  height: 5px;
+  background-color: red;
+  -webkit-transform: translate(0px, 0px);
+  -ms-transform: translate(0px, 0px);
+  transform: translate(0px, 0px);
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+  -webkit-perspective: 1000px;
+  perspective: 1000px;
+  position: absolute;
+}
+
+.ball {
+  -webkit-transform-origin: 50% 50%;
+  -ms-transform-origin: 50% 50%;
+  transform-origin: 50% 50%;
+}
+
+.frame2 {
+  background-color: #001c82;
+}
+
+.logo {
+  -webkit-transform: translate(225px, 167px) scale(0.5, 0.5);
+  -ms-transform: translate(225px, 167px) scale(0.5, 0.5);
+  transform: translate(225px, 167px) scale(0.5, 0.5);
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+  -webkit-perspective: 1000px;
+  perspective: 1000px;
+  position: absolute;
+}
+
+.ribbon {
+  -webkit-transform: translate(96px, 0px) scale(0.5, 0.5);
+  -ms-transform: translate(96px, 0px) scale(0.5, 0.5);
+  transform: translate(96px, 0px) scale(0.5, 0.5);
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+  -webkit-perspective: 1000px;
+  perspective: 1000px;
+  position: absolute;
+}
+
+.ribbon img {
+  -webkit-transform: translate(0px, 0px);
+  -ms-transform: translate(0px, 0px);
+  transform: translate(0px, 0px);
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+  -webkit-perspective: 1000px;
+  perspective: 1000px;
+  position: absolute;
+}
+
+.ribbon .blue {
+  -webkit-transform-origin: 50% 0;
+  -ms-transform-origin: 50% 0;
+  transform-origin: 50% 0;
+  -webkit-transform: translate(20px, -70px) scale(1.25, 1);
+  -ms-transform: translate(20px, -70px) scale(1.25, 1);
+  transform: translate(20px, -70px) scale(1.25, 1);
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+  -webkit-perspective: 1000px;
+  perspective: 1000px;
+  position: absolute;
+}
+
+.ribbon .end {
+  -webkit-transform: translate(20px, 0px) scale(1, 1);
+  -ms-transform: translate(20px, 0px) scale(1, 1);
+  transform: translate(20px, 0px) scale(1, 1);
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+  -webkit-perspective: 1000px;
+  perspective: 1000px;
+  position: absolute;
+}
+
+.nba {
+  -webkit-transform: translate(10px, 161px) scale(0.5, 0.5);
+  -ms-transform: translate(10px, 161px) scale(0.5, 0.5);
+  transform: translate(10px, 161px) scale(0.5, 0.5);
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+  -webkit-perspective: 1000px;
+  perspective: 1000px;
+  position: absolute;
+}
+
+.frame1 {
+  opacity: 1;
+  background-color: white;
+}
+
 /*# sourceMappingURL=main.css.map */

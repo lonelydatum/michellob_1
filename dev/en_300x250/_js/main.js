@@ -1,20 +1,15 @@
 import {init, size, BLUE, RED} from '../../_common/js/common.js'
 
 
-
-
-function start(){
-
-	const tl = init()
-
-
+function shoot(){
+	const tl_ball = new TimelineMax()
 	const y = 90
 	const x = 30
 	
 	
-	tl.add( setItem("og") )
+	
 
-	tl.to(".ball", .9, 
+	tl_ball.add( setItem("og") ).to(".ball", .9, 
 		{	
 			rotation: 222,
 			bezier:
@@ -30,29 +25,38 @@ function start(){
 					autoRotate:["x","y","rotation", 0, true]
 				}, 
 			ease:Power2.easeInOut
-		}, 1.4
+		}
 	)
 
+	return tl_ball
 
-	// tl.from(".t1", .3, {opacity:0}, 0)
+}
 
-	// TweenLite.set(".flip-card-container", {width:size.w, height:size.h})
+function start(){
+
+	const tl = init()
+
 	tl.to(".t1 .flip-card", .7, {transform: `rotateX(180deg)`, ease:Back.easeInOut}, 0)
 
+	tl.add( setItem("og"), 0 )
+	tl.add( shoot() , 1.4)
 	
-	
-	
-	tl.add( setItem("white") )
 
-	tl.set(".frame1", {backgroundColor: BLUE})
 
 	
-	tl.set([".t1", ".hoop", ".ball"], {opacity:0})
+	
+
+	
+	
+	tl.add("toWhite", "-=.2")
+	tl.add( setItem("white"), "toWhite" )
+	tl.set(".frame1", {backgroundColor: BLUE}, "toWhite")
+	tl.set([".t1", ".hoop", ".ball"], {opacity:0}, "toWhite")
 	
 
 	const time = .5
 	const time2 = .3
-	const ease = Power1.easeInOut
+	const ease = Power1.easeOut
 	tl.add("toRed")
 	tl.to(".logo", time, {x:89, y:163, scale:.53, ease}, "toRed")
 	tl.to(".nba", time, {x:34, y:157, scale:.53, ease}, "toRed")

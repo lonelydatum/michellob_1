@@ -18,7 +18,7 @@ var RED = "#c7102d";
 function setWH(el, id) {
 	var width = el.offsetWidth / 2;
 	var height = el.offsetHeight / 2;
-	// console.log({width, height});
+	// console.log({width, height}in);
 	TweenMax.set("." + id, { width: width, height: height });
 }
 
@@ -61,7 +61,7 @@ exports.getWH = getWH;
 var _commonJsCommonJs = require('../../_common/js/common.js');
 
 function shoot() {
-	var tl_ball = (0, _commonJsCommonJs.init)();
+	var tl_ball = new TimelineMax();
 	var BALL_TIME = .7;
 
 	tl_ball.to(".ball", .3, { opacity: 1 });

@@ -18,7 +18,7 @@ var RED = "#c7102d";
 function setWH(el, id) {
 	var width = el.offsetWidth / 2;
 	var height = el.offsetHeight / 2;
-	// console.log({width, height});
+	// console.log({width, height}in);
 	TweenMax.set("." + id, { width: width, height: height });
 }
 
@@ -60,16 +60,12 @@ exports.getWH = getWH;
 
 var _commonJsCommonJs = require('../../_common/js/common.js');
 
-function start() {
-
-	var tl = (0, _commonJsCommonJs.init)();
-
+function shoot() {
+	var tl_ball = new TimelineMax();
 	var y = 90;
 	var x = 30;
 
-	tl.add(setItem("og"));
-
-	tl.to(".ball", .9, {
+	tl_ball.add(setItem("og")).to(".ball", .9, {
 		rotation: 222,
 		bezier: {
 			type: "cubic",
@@ -78,22 +74,28 @@ function start() {
 			autoRotate: ["x", "y", "rotation", 0, true]
 		},
 		ease: Power2.easeInOut
-	}, 1.4);
+	});
 
-	// tl.from(".t1", .3, {opacity:0}, 0)
+	return tl_ball;
+}
 
-	// TweenLite.set(".flip-card-container", {width:size.w, height:size.h})
+function start() {
+
+	var tl = (0, _commonJsCommonJs.init)();
+
 	tl.to(".t1 .flip-card", .7, { transform: "rotateX(180deg)", ease: Back.easeInOut }, 0);
 
-	tl.add(setItem("white"));
+	tl.add(setItem("og"), 0);
+	tl.add(shoot(), 1.4);
 
-	tl.set(".frame1", { backgroundColor: _commonJsCommonJs.BLUE });
-
-	tl.set([".t1", ".hoop", ".ball"], { opacity: 0 });
+	tl.add("toWhite", "-=.2");
+	tl.add(setItem("white"), "toWhite");
+	tl.set(".frame1", { backgroundColor: _commonJsCommonJs.BLUE }, "toWhite");
+	tl.set([".t1", ".hoop", ".ball"], { opacity: 0 }, "toWhite");
 
 	var time = .5;
 	var time2 = .3;
-	var ease = Power1.easeInOut;
+	var ease = Power1.easeOut;
 	tl.add("toRed");
 	tl.to(".logo", time, { x: 89, y: 163, scale: .53, ease: ease }, "toRed");
 	tl.to(".nba", time, { x: 34, y: 157, scale: .53, ease: ease }, "toRed");

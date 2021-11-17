@@ -1,7 +1,7 @@
 import {init, size, BLUE, RED} from '../../_common/js/common.js'
 
 function shoot(){
-	const tl_ball = init()
+	const tl_ball = new TimelineMax()
 	const BALL_TIME = .7
 	
 	

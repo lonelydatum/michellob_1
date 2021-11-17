@@ -60,58 +60,35 @@ exports.getWH = getWH;
 
 var _commonJsCommonJs = require('../../_common/js/common.js');
 
+var tl = (0, _commonJsCommonJs.init)();
+
 function start() {
 
-	var tl = (0, _commonJsCommonJs.init)();
-
-	var y = 90;
-	var x = 30;
-
-	tl.add(setItem("og"));
-
-	tl.to(".ball", .9, {
-		rotation: 222,
-		bezier: {
-			type: "cubic",
-			curviness: 8,
-			values: [{ x: -80 - x, y: 100 - y }, { x: 50 - x, y: 30 - y }, { x: 103 - x, y: 120 - y }, { x: 123 - x, y: 152 - y }],
-			autoRotate: ["x", "y", "rotation", 0, true]
-		},
-		ease: Power2.easeInOut
-	}, 1.4);
-
-	// tl.from(".t1", .3, {opacity:0}, 0)
-
-	// TweenLite.set(".flip-card-container", {width:size.w, height:size.h})
-	tl.to(".t1 .flip-card", .7, { transform: "rotateX(180deg)", ease: Back.easeInOut }, 0);
-
-	tl.add(setItem("white"));
+	var FLASH = .4;
 
 	tl.set(".frame1", { backgroundColor: _commonJsCommonJs.BLUE });
+	tl.add(setItem("w"));
 
-	tl.set([".t1", ".hoop", ".ball"], { opacity: 0 });
+	var tl2 = new TimelineMax();
+	tl2.from(".ribbon", FLASH * 2, { y: "-=90" }, 0);
+	// tl2.from(".beer", FLASH*2, {y:"+=90"}, 0)
+	tl2.from(".logo", FLASH * 2, { x: "-=140" }, 0);
 
-	var time = .5;
-	var time2 = .3;
-	var ease = Power1.easeInOut;
-	tl.add("toRed");
-	tl.to(".logo", time, { x: 89, y: 163, scale: .53, ease: ease }, "toRed");
-	tl.to(".nba", time, { x: 34, y: 157, scale: .53, ease: ease }, "toRed");
-	tl.to(".ribbon", time, { x: 190, ease: ease }, "toRed");
+	tl.add("toRed", "+=" + FLASH);
+	tl.set(".frame1", { backgroundColor: _commonJsCommonJs.RED }, "toRed");
+	tl.add(setItem("b"), "toRed");
 
-	tl.set(".frame1", { backgroundColor: _commonJsCommonJs.RED }, "toRed+=" + time2);
-	tl.add(setItem("blue"), "toRed+=" + time2);
-	tl.to(".ribbon .blue", .3, { x: 20, y: 0, scale: 1, ease: ease }, "toRed+=" + time2);
+	tl.add("toOG", "+=" + FLASH);
+	tl.set(".frame1", { backgroundColor: "white" }, "toOG");
+	tl.add(setItem("og"), "toOG");
 
-	tl.add(setItem("end"));
-	tl.set(".frame1", { backgroundColor: "white" });
+	tl.add("t1");
+	tl.to(".t1 .flip-card", .7, { transform: "rotateX(180deg)", ease: Back.easeInOut }, "t1");
+	tl.from(".legal", .3, { opacity: 0 }, "t1");
 
-	tl.add("end", "+=.3");
-
-	tl.from(".beer", .4, { x: "+=100", ease: Power3.easeOut }, "end");
-	// tl.from(".t2", .3, {opacity:0, x:"-=50", ease}, "end")
-	tl.to(".t2 .flip-card", .7, { transform: "rotateX(180deg)", ease: Back.easeInOut }, "end");
-	tl.from(".o", .3, { opacity: 0, ease: ease }, "end");
+	tl.add("t2", "+=2");
+	tl.to(".t1 .flip-card", .7, { transform: "rotateX(0deg)", ease: Back.easeInOut }, "t2");
+	tl.to(".t2 .flip-card", .7, { transform: "rotateX(180deg)", ease: Back.easeInOut }, "t2");
 }
 
 function setItem(item) {
@@ -119,7 +96,7 @@ function setItem(item) {
 
 	var tl2 = new TimelineMax();
 
-	var list = ["og", "white", "blue", "end"];
+	var list = ["w", "b", "og"];
 
 	list.map(function (i) {
 		var opacity = item === i ? 1 : 0;

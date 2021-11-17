@@ -18,7 +18,7 @@ var RED = "#c7102d";
 function setWH(el, id) {
 	var width = el.offsetWidth / 2;
 	var height = el.offsetHeight / 2;
-
+	// console.log({width, height});
 	TweenMax.set("." + id, { width: width, height: height });
 }
 

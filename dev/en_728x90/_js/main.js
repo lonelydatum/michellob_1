@@ -53,7 +53,7 @@ function start(){
 
 
 function setItem(item, delay=0){
-	console.log(delay);
+	
 	const tl2 = new TimelineMax()
 	
 	const list = ["w", "b", "og"]

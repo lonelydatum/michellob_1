@@ -94,7 +94,6 @@ function start() {
 function setItem(item) {
 	var delay = arguments.length <= 1 || arguments[1] === undefined ? 0 : arguments[1];
 
-	console.log(delay);
 	var tl2 = new TimelineMax();
 
 	var list = ["w", "b", "og"];

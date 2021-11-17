@@ -65,9 +65,9 @@ function start(){
 	tl.add( setItem("og"), "toOG" )
 	tl.set(".frame1", {backgroundColor: "white"}, "toOG")
 
-	tl.add("end")
+	tl.add("end", "+=.2")
 	tl.to(".t2 .flip-card", .7, {transform: `rotateX(180deg)`, ease:Back.easeInOut}, "end")
-	tl.from(".beer", .5, {x:"-=120"}, "end")
+	tl.from(".beer", .3, {x:"-=120", ease:Power3.easeOut}, "end")
 
 	return
 

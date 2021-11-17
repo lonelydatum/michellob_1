@@ -48,7 +48,7 @@ function start() {
 			autoRotate: ["x", "y", "rotation", 0, true]
 		},
 		ease: Power2.easeInOut
-	}, 1.2);
+	}, 1.4);
 
 	// tl.from(".t1", .3, {opacity:0}, 0)
 

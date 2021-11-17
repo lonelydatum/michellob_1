@@ -27,7 +27,7 @@ function start(){
 					autoRotate:["x","y","rotation", 0, true]
 				}, 
 			ease:Power2.easeInOut
-		}, 1.2
+		}, 1.4
 	)
 
 

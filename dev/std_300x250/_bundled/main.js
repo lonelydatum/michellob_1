@@ -48,11 +48,14 @@ function start() {
 			autoRotate: ["x", "y", "rotation", 0, true]
 		},
 		ease: Power2.easeInOut
-	}, 2);
+	}, 1.2);
 
-	tl.from(".t1", .3, { opacity: 0 }, 0);
+	// tl.from(".t1", .3, {opacity:0}, 0)
 
-	tl.add(setItem("white"), "+=.1");
+	// TweenLite.set(".flip-card-container", {width:size.w, height:size.h})
+	tl.to(".t1 .flip-card", .7, { transform: "rotateX(180deg)", ease: Back.easeInOut }, 0);
+
+	tl.add(setItem("white"));
 
 	tl.set(".frame1", { backgroundColor: BLUE });
 
@@ -76,7 +79,8 @@ function start() {
 	tl.add("end", "+=.3");
 
 	tl.from(".beer", .4, { x: "+=100", ease: Power3.easeOut }, "end");
-	tl.from(".t2", .3, { opacity: 0, x: "-=50", ease: ease }, "end");
+	// tl.from(".t2", .3, {opacity:0, x:"-=50", ease}, "end")
+	tl.to(".t2 .flip-card", .7, { transform: "rotateX(180deg)", ease: Back.easeInOut }, "end");
 	tl.from(".o", .3, { opacity: 0, ease: ease }, "end");
 }
 

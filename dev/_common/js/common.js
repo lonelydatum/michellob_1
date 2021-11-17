@@ -14,12 +14,27 @@ const RED = "#c7102d"
 
 
 
-
-function getWH(id){
-	const el = document.getElementById(id)
+function setWH(el, id){
 	const width = el.offsetWidth/2
 	const height = el.offsetHeight/2
-	return {width, height}
+	console.log(el, {width, height});
+	TweenMax.set(`.${id}`, {width, height})
+
+	
+}
+
+function getWH(id){
+
+	const el = document.getElementById(id)
+	console.log(el.complete);
+	if(el.complete){
+		setWH(el, id)
+	}else{
+		el.addEventListener('load', ()=>{
+			setWH(el, id)
+		})	  	
+	}
+	
 }
 
 function init(){
@@ -31,8 +46,12 @@ function init(){
 	
 
 	tl.set(".frame1", {opacity:1})
-	tl.set(".t1", getWH("t1"))
-	tl.set(".t2", getWH("t2"))
+
+	getWH("t1")
+	getWH("t2")
+
+	// tl.set(".t1", )
+	
 
 	
 

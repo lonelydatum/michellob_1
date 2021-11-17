@@ -1,9 +1,13 @@
 import {init, size, BLUE, RED} from '../../_common/js/common.js'
 
-const tl = init()
+
 
 
 function start(){
+
+	const tl = init()
+
+
 	const y = 90
 	const x = 30
 	
@@ -75,7 +79,7 @@ function start(){
 
 
 function setItem(item, delay=0){
-	console.log(delay);
+	
 	const tl2 = new TimelineMax()
 	
 	const list = ["og", "white", "blue", "end"]

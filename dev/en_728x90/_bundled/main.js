@@ -15,11 +15,24 @@ var h = size.h;
 var BLUE = "#001c82";
 var RED = "#c7102d";
 
-function getWH(id) {
-	var el = document.getElementById(id);
+function setWH(el, id) {
 	var width = el.offsetWidth / 2;
 	var height = el.offsetHeight / 2;
-	return { width: width, height: height };
+	console.log(el, { width: width, height: height });
+	TweenMax.set("." + id, { width: width, height: height });
+}
+
+function getWH(id) {
+
+	var el = document.getElementById(id);
+	console.log(el.complete);
+	if (el.complete) {
+		setWH(el, id);
+	} else {
+		el.addEventListener('load', function () {
+			setWH(el, id);
+		});
+	}
 }
 
 function init() {
@@ -27,8 +40,11 @@ function init() {
 	var tl = new TimelineMax({ onComplete: function onComplete() {} });
 
 	tl.set(".frame1", { opacity: 1 });
-	tl.set(".t1", getWH("t1"));
-	tl.set(".t2", getWH("t2"));
+
+	getWH("t1");
+	getWH("t2");
+
+	// tl.set(".t1", )
 
 	return tl;
 }

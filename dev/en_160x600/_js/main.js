@@ -1,6 +1,34 @@
 import {init, size, BLUE, RED} from '../../_common/js/common.js'
 
+function shoot(){
+	const tl_ball = init()
+	const BALL_TIME = .7
+	
+	
+	tl_ball.to(".ball", .3, {opacity:1})
+	tl_ball.to(".ball", BALL_TIME, 
+		{	
+			rotation: 400,
+			scale: .33,
+			bezier:
+				{
+					
+					curviness: 1,
+					values:[
+						{x:2, y:360},
+						{x:2, y:60},						
+						{x:2, y:120},
+					], 
+				}, 
+			ease:Power1.easeOut
+		}, 0
+	)
 
+	tl_ball.set(".hoop", {zIndex:99}, BALL_TIME*.6)
+
+	
+	return tl_ball
+}
 
 
 function start(){
@@ -15,41 +43,44 @@ function start(){
 	tl.add( setItem("og") )
 	
 	
-	
-	// tl.add( setItem("w") )
-	tl.to(".ball", .2, {opacity:1})
-	tl.to(".ball", 5, 
-		{	
-			rotation: 555,
-			scale: .37,
-			bezier:
-				{
-					
-					curviness: 2,
-					values:[
-						{x:2, y:360},
-						{x:2, y:40},						
-						{x:2, y:510},
-					], 
-					// autoRotate:["x","y","rotation", 0, true]
-				}, 
-			ease:Linear.easeNone
-		}, 0
-	)
+	tl.to(".t1 .flip-card", .7, {transform: `rotateX(180deg)`, ease:Back.easeInOut}, 0)
 
+	tl.add(shoot(), 1.8)
+
+	// return
+
+
+	tl.add("toWhite")
+	tl.set(".ball", {opacity:0}, "toWhite")
+	tl.set([".hoop", ".t1"], {opacity:0}, "toWhite")
+	tl.add( setItem("w"), "toWhite" )
+	tl.set(".frame1", {backgroundColor: BLUE}, "toWhite")
+
+
+	tl.add("toBlue", "+=.3")	
+	tl.add( setItem("b"), "toBlue" )
+	tl.set(".frame1", {backgroundColor: RED}, "toBlue")
+
+	tl.add("toOG", "+=.3")	
+	tl.add( setItem("og"), "toOG" )
+	tl.set(".frame1", {backgroundColor: "white"}, "toOG")
+
+	tl.add("end")
+	tl.to(".t2 .flip-card", .7, {transform: `rotateX(180deg)`, ease:Back.easeInOut}, "end")
+	tl.from(".beer", .5, {x:"-=120"}, "end")
 
 	return
 
 
 	
-	// tl.to(".t1 .flip-card", .7, {transform: `rotateX(180deg)`, ease:Back.easeInOut}, 0)
+	
 
 	
 	
 	
-	// tl.add( setItem("white") )
+	
 
-	// tl.set(".frame1", {backgroundColor: BLUE})
+	
 
 	
 	// tl.set([".t1", ".hoop", ".ball"], {opacity:0})

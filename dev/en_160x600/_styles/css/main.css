@@ -207,9 +207,9 @@ sup {
 }
 
 .t1 {
-  -webkit-transform: translate(0px, 26px) scale(1, 1);
-  -ms-transform: translate(0px, 26px) scale(1, 1);
-  transform: translate(0px, 26px) scale(1, 1);
+  -webkit-transform: translate(0px, 51px) scale(1, 1);
+  -ms-transform: translate(0px, 51px) scale(1, 1);
+  transform: translate(0px, 51px) scale(1, 1);
   -webkit-backface-visibility: hidden;
   backface-visibility: hidden;
   -webkit-perspective: 1000px;
@@ -218,9 +218,9 @@ sup {
 }
 
 .t2 {
-  -webkit-transform: translate(0px, 57px) scale(1, 1);
-  -ms-transform: translate(0px, 57px) scale(1, 1);
-  transform: translate(0px, 57px) scale(1, 1);
+  -webkit-transform: translate(0px, 293px) scale(1, 1);
+  -ms-transform: translate(0px, 293px) scale(1, 1);
+  transform: translate(0px, 293px) scale(1, 1);
   -webkit-backface-visibility: hidden;
   backface-visibility: hidden;
   -webkit-perspective: 1000px;
@@ -232,7 +232,7 @@ sup {
   -webkit-transform-origin: 50% 50%;
   -ms-transform-origin: 50% 50%;
   transform-origin: 50% 50%;
-  opacity: .2;
+  opacity: 0;
   -webkit-transform: translate(2px, 360px) scale(0.5, 0.5);
   -ms-transform: translate(2px, 360px) scale(0.5, 0.5);
   transform: translate(2px, 360px) scale(0.5, 0.5);

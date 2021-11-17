@@ -14,13 +14,13 @@
 }
 
 .t1{
-	@include pos-scale(0, 26, 1);
+	@include pos-scale(0, 51, 1);
 	// width: 300px;
  //  	height: 45px;
 }
 
 .t2{
-	@include pos-scale(0, 57, 1);
+	@include pos-scale(0, 293, 1);
 	// border: 1px solid red;
 	// width: 300px;
  //  	height: 46px;
@@ -28,7 +28,7 @@
 
 .ball{
 	transform-origin: 50% 50%;
-	opacity: .2;
+	opacity: 0;
 	@include pos-scale(2, 360, .5);
 	// @include pos-scale(2, 40, .4);
 	// @include pos-scale(2, 210, .4);

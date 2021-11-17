@@ -17,7 +17,7 @@ const RED = "#c7102d"
 function setWH(el, id){
 	const width = el.offsetWidth/2
 	const height = el.offsetHeight/2
-	console.log(el, {width, height});
+	
 	TweenMax.set(`.${id}`, {width, height})
 
 	
@@ -26,7 +26,7 @@ function setWH(el, id){
 function getWH(id){
 
 	const el = document.getElementById(id)
-	console.log(el.complete);
+	
 	if(el.complete){
 		setWH(el, id)
 	}else{

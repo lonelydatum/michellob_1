@@ -18,14 +18,14 @@ var RED = "#c7102d";
 function setWH(el, id) {
 	var width = el.offsetWidth / 2;
 	var height = el.offsetHeight / 2;
-	console.log(el, { width: width, height: height });
+
 	TweenMax.set("." + id, { width: width, height: height });
 }
 
 function getWH(id) {
 
 	var el = document.getElementById(id);
-	console.log(el.complete);
+
 	if (el.complete) {
 		setWH(el, id);
 	} else {

@@ -18,14 +18,14 @@ var RED = "#c7102d";
 function setWH(el, id) {
 	var width = el.offsetWidth / 2;
 	var height = el.offsetHeight / 2;
-	console.log(el, { width: width, height: height });
+
 	TweenMax.set("." + id, { width: width, height: height });
 }
 
 function getWH(id) {
 
 	var el = document.getElementById(id);
-	console.log(el.complete);
+
 	if (el.complete) {
 		setWH(el, id);
 	} else {
@@ -69,7 +69,7 @@ function start() {
 
 	tl.add(setItem("og"));
 
-	tl.to(".ball", 1.2, {
+	tl.to(".ball", .9, {
 		rotation: 222,
 		bezier: {
 			type: "cubic",
@@ -91,8 +91,8 @@ function start() {
 
 	tl.set([".t1", ".hoop", ".ball"], { opacity: 0 });
 
-	var time = .6;
-	var time2 = .4;
+	var time = .5;
+	var time2 = .3;
 	var ease = Power1.easeInOut;
 	tl.add("toRed");
 	tl.to(".logo", time, { x: 89, y: 163, scale: .53, ease: ease }, "toRed");

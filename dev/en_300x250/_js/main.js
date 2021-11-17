@@ -14,7 +14,7 @@ function start(){
 	
 	tl.add( setItem("og") )
 
-	tl.to(".ball", 1.2, 
+	tl.to(".ball", .9, 
 		{	
 			rotation: 222,
 			bezier:
@@ -50,8 +50,8 @@ function start(){
 	tl.set([".t1", ".hoop", ".ball"], {opacity:0})
 	
 
-	const time = .6
-	const time2 = .4
+	const time = .5
+	const time2 = .3
 	const ease = Power1.easeInOut
 	tl.add("toRed")
 	tl.to(".logo", time, {x:89, y:163, scale:.53, ease}, "toRed")

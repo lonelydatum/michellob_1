@@ -9,11 +9,18 @@ const {w, h} = size
 
 
 
+const BLUE = "#001c82"
+const RED = "#c7102d"
 
 
 
 
-
+function getWH(id){
+	const el = document.getElementById(id)
+	const width = el.offsetWidth/2
+	const height = el.offsetHeight/2
+	return {width, height}
+}
 
 function init(){
 	
@@ -24,6 +31,8 @@ function init(){
 	
 
 	tl.set(".frame1", {opacity:1})
+	tl.set(".t1", getWH("t1"))
+	tl.set(".t2", getWH("t2"))
 
 	
 
@@ -33,5 +42,4 @@ function init(){
 
 
 
-
-export {size, init}
+export {size, init, BLUE, RED, getWH}

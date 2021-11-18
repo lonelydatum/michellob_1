@@ -114,6 +114,9 @@ function start() {
 	// tl.from(".t2", .3, {opacity:0, x:"-=50", ease}, "end")
 	tl.to(".t2 .flip-card", .7, { transform: "rotateX(180deg)", ease: Back.easeInOut }, "end");
 	tl.from(".o", .3, { opacity: 0, ease: ease }, "end");
+
+	tl.to([".logo", ".o", ".nba"], .3, { y: "-=18" });
+	tl.from(".t3", .3, { opacity: 0, ease: ease });
 }
 
 function setItem(item) {

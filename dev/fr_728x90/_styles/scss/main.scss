@@ -1,0 +1,23 @@
+@import '../../../_common/styles/common.scss';
+@import '../../../_common/styles/flip.scss';
+
+#banner{
+	width: 728px;
+	height: 90px;
+	background-color: white;
+}
+
+
+
+
+.frame1{
+	// opacity: 1;	
+}
+
+.t1{
+	@include pos-scale(0, 0, 1);	
+}
+
+.t2{
+	@include pos-scale(0, 0, 1);	
+}

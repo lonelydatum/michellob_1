@@ -1,0 +1,73 @@
+@import '../../../_common/styles/common.scss';
+@import '../../../_common/styles/flip.scss';
+
+
+// .dot{
+// 	width: 5px;
+// 	height: 5px;
+// 	background-color: red;
+// 	@include pos(0, 0);
+// }
+
+.o{
+	@include pos-scale(71, 184, .5);
+}
+
+.ball{
+	// border: 1px solid blue;
+	transform-origin: 50% 50%;
+	@include pos-scale(-90, 0, .5);
+
+	// @include pos-scale(90, 90, .5);
+}
+
+.frame2{
+	background-color: #001c82;
+}
+
+.logo{
+	@include pos-scale(225, 167, .5);
+	// @include pos-scale(55, 167, .5);
+}
+
+.ribbon{
+	@include pos-scale(96, 0, .5);
+	// @include pos-scale(176, 0, .5);
+	img{
+		@include pos(0, 0);
+	}	
+	.blue{
+		transform-origin: 50% 0;
+		@include pos-scale-xy(20, -70, 1.25, 1);
+		
+	}
+	.end{
+		@include pos-scale-xy(20, 0, 1, 1);
+	}
+}
+
+
+.nba{
+	@include pos-scale(10, 161, .5);
+}
+
+
+
+
+.frame1{
+	// opacity: 1;
+	background-color: white;
+}
+
+.t1{
+	@include pos-scale(0, 29, 1);
+	// width: 300px;
+ //  	height: 45px;
+}
+
+.t2{
+	@include pos-scale(0, 63, 1);
+	// border: 1px solid red;
+	// width: 300px;
+ //  	height: 46px;
+}
